@@ -1,11 +1,14 @@
 import './App.css';
 
 import Button from './components/Button';
+import Home from './components/Home';
 import Welcome from './components/Welcome';
 
 function App() {
   return (
     <>
+      <Home />
+
       <h1 id="hello">Heading 1</h1>
       <Welcome name="Juha" random="Hello world" />
 
