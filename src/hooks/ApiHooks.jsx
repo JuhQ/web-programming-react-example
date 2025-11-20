@@ -55,4 +55,24 @@ const useMedia = () => {
   return {mediaArray: data};
 };
 
-export {useMedia};
+const useAuthentication = () => {
+  const postLogin = async (inputs) => {
+    const fetchOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs),
+    };
+    const response = await fetch(
+      import.meta.env.VITE_AUTH_API + '/auth/login',
+      fetchOptions,
+    );
+    const data = await response.json();
+    return data;
+  };
+
+  return {postLogin};
+};
+
+export {useMedia, useAuthentication};
