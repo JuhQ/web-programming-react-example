@@ -1,26 +1,18 @@
 import './App.css';
 
-import Button from './components/Button';
-import Example from './components/Example';
-import Home from './components/Home';
-import Welcome from './components/Welcome';
+import {BrowserRouter, Route, Routes} from 'react-router';
+
+import HomeView from './views/Home';
+import Login from './views/Login';
 
 function App() {
   return (
-    <>
-      <Example />
-
-      <Home />
-
-      <h1 id="hello">Heading 1</h1>
-      <Welcome name="Juha" random="Hello world" />
-
-      <Button />
-
-      {/*
-      Welcome({name: "Juha", random: "Hello world"})
-      */}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
